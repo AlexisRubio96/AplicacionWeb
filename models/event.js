@@ -33,7 +33,7 @@ const eventSchema = new mongoose.Schema({
     },
     opciones: [{
         
-    }]
+    }],
     sprite:{
         type: String,
         required: true
