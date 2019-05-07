@@ -8,7 +8,7 @@ const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup');
 const eventRouter = require('./routes/event');
 const userRouter = require('./routes/user');
-const 
+
 //______Loaded modules_______
 const session = require('express-session');
 const path = require('path');
