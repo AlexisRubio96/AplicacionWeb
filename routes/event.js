@@ -68,11 +68,11 @@ router.get('/name', (req, res) => {
 router.get('/share', (req, res) => {
     console.log('Enviar invitación a este evento:');
     console.log(req.event);
-    // res.render('sendEmail', {message: req.flash('eventDetail')}) ;  
-    res.render('sendEmail.ejs', {
-        //events : req.events 
-        event : req.event
-    });   
+    res.render('sendEmail', {message: req.flash('eventDetail')}) ;  
+    // res.render('sendEmail.ejs', {
+    //     //events : req.events 
+    //     event : req.event
+    // });   
 });
 
 router.post('/send', (req, res) => {
@@ -112,7 +112,9 @@ router.post('/send', (req, res) => {
       }
       console.log('Message sent: %s', info.messageId);   
       console.log('Email has been sent');
-  });    
+  });  
+  
+  res.render('home', {message: req.flash('eventDetail')}) ;
 });
 
 
