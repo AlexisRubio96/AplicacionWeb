@@ -4,6 +4,7 @@ const auth = require('../middleware/auth');
 const passport = require('passport');
 const express = require('express');
 const router = express.Router();
+const winston = require('winston');
 
 const nodemailer = require('nodemailer');
 const exphbs = require('express-handlebars');
@@ -21,9 +22,12 @@ const mailer = nodemailer.createTransport({
 });
 
 router.post('/addEvent', async(req, res) => {
-    console.log('Add event...');
+    winston.info('Add event...');
     const {error} = validateEvent(req.body);
-    if(error) return res.status(400).render('error', {error: 400, message: error.details[0].message});
+    if(error){
+        winston.error(error.details[0].message);
+        return res.status(400).render('error', {error: 400, message: error.details[0].message});
+    } 
     
     const emailAdd = req.user.local.email;
 
@@ -38,13 +42,13 @@ router.post('/addEvent', async(req, res) => {
         types: req.body.types
     });
     await events.save();
-    console.log(emailAdd);
-    console.log(events);
+    winston.info(emailAdd);
+    winston.info(events);
 
     //Asscoicate event with name
     const userUpdate = await User.updateOne({"local.email" : emailAdd}, { $push: {myEvents: events} });
-    console.log('Se guardo en mongo el evento, Por: ' + req.user.local.email);
-    console.log(req.user);
+    winston.info('Se guardo en mongo el evento, Por: ' + req.user.local.email);
+    winston.info(req.user);
     //**********Cambiar por la dirección del detalle del evento. EJS
     //return res.redirect('/detailedEvent');
     res.render('detailedEventUser.ejs', {
@@ -61,14 +65,14 @@ router.get('/add', (req, res) => {
 });
 
 router.get('/name', (req, res) => {
-    console.log(req.body.name);
+    winston.info('GET/name' + req.body.name);
     res.render('detailedEvent', {message: req.flash('eventDetail')}) ;
 });
 
 
 //Para cuando se ha inciado sesión
 router.get('/nameUser', (req, res) => {
-    console.log(req.body.name);    
+    winston.info('GET/nameUser' + req.body.name);    
     res.render('detailedEventUser.ejs', {
         user : req.user, 
         event : req.event
@@ -154,21 +158,34 @@ router.post('/send', (req, res) => {
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
+          winston.error('POST/send' + error);
           return console.log(error);
       }
-      console.log('Message sent: %s', info.messageId);   
-      console.log('Email has been sent');
+      winston.info('Message sent: %s', info.messageId);   
+      winston.info('Email has been sent');
   });  
   
   res.render('home', {message: req.flash('eventDetail')}) ;
 });
 
+router.post('/assist', (req, res) => {
+    winston.info('POST/assist' + 'Llegue a un evento en especifico');
+    winston.info('POST/assist' + "user " + req.user);
+    winston.info('POST/assist' + "Event " + req.event);
+
+    winston.info('POST/assist' + "Element " + req.body.name);
+
+    /**
+    res.render('homeUser.ejs', {
+        user : req.user, 
+    });  */    
+});
 
 router.post('/name', async(req, res) => {
-    console.log('Llegue a un evento en especifico');
-    console.log(req.body.event);
+    winston.info('POST/name' + 'Llegue a un evento en especifico');
+    winston.info('POST/name' + req.body.event);
     const events = await Event.findOne({ name: req.body.search });
-    console.log(events);
+    winston.info('POST/name' + events);
 
     res.render('detailedEvent', {events}) ;     
 });

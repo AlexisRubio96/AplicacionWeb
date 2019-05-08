@@ -1,0 +1,37 @@
+2019-05-08T21:16:39.819Z [31merror[39m: uncaughtException: dlopen(/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/lib/binding/bcrypt_lib.node, 1): no suitable image found.  Did find:
+	/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/lib/binding/bcrypt_lib.node: unknown file type, first eight bytes: 0x4D 0x5A 0x90 0x00 0x03 0x00 0x00 0x00
+	/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/lib/binding/bcrypt_lib.node: unknown file type, first eight bytes: 0x4D 0x5A 0x90 0x00 0x03 0x00 0x00 0x00
+Error: dlopen(/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/lib/binding/bcrypt_lib.node, 1): no suitable image found.  Did find:
+	/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/lib/binding/bcrypt_lib.node: unknown file type, first eight bytes: 0x4D 0x5A 0x90 0x00 0x03 0x00 0x00 0x00
+	/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/lib/binding/bcrypt_lib.node: unknown file type, first eight bytes: 0x4D 0x5A 0x90 0x00 0x03 0x00 0x00 0x00
+    at Object.Module._extensions..node (internal/modules/cjs/loader.js:750:18)
+    at Module.load (internal/modules/cjs/loader.js:620:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:560:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:552:3)
+    at Module.require (internal/modules/cjs/loader.js:657:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/bcrypt/bcrypt.js:6:16)
+    at Module._compile (internal/modules/cjs/loader.js:721:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:732:10)
+    at Module.load (internal/modules/cjs/loader.js:620:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:560:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:552:3)
+    at Module.require (internal/modules/cjs/loader.js:657:17)
+    at require (internal/modules/cjs/helpers.js:20:18)
+    at Object.<anonymous> (/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/routes/user.js:5:16)
+    at Module._compile (internal/modules/cjs/loader.js:721:30)
+2019-05-08T21:17:01.036Z [31merror[39m: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1254:14)
+    at listenInCluster (net.js:1302:12)
+    at Server.listen (net.js:1390:7)
+    at Function.listen (/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/node_modules/express/lib/application.js:618:24)
+    at Object.<anonymous> (/Users/netocervantes/Documents/DesarrolloWeb/ProyectoFinal/AplicacionWeb/index.js:75:5)
+    at Module._compile (internal/modules/cjs/loader.js:721:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:732:10)
+    at Module.load (internal/modules/cjs/loader.js:620:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:560:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:552:3)
+    at Function.Module.runMain (internal/modules/cjs/loader.js:774:12)
+    at executeUserCode (internal/bootstrap/node.js:499:15)
+    at startMainThreadExecution (internal/bootstrap/node.js:436:3)

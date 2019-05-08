@@ -4,20 +4,21 @@ const passport = require('passport');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const router = express.Router();
+const winston = require('winston');
 
 router.get('/agregarEvento', (req, res) => {
-    console.log('Agregar evento...');
+    winston.info('Agregar evento...');
     
     res.render('home', {message: req.flash('loginMessage')}) ;     
 });
 
 router.post('/updateEmail', async(req, res) => {
-    console.log('Cambiar email');
+    winston.info('Cambiar email');
     var emailCheck = req.user.local.email;
     var newEmail = req.body.newEmail;
-    console.log(emailCheck)
-    console.log(newEmail)
-    console.log("paso");
+    winston.info(emailCheck)
+    winston.info(newEmail)
+    //console.log("paso");
 
     //const userUpdate = await User.findOne({"local.email": emailCheck});
     const userUpdate = await User.updateOne({"local.email" : emailCheck}, {"local.email": newEmail});
@@ -28,15 +29,15 @@ router.post('/updateEmail', async(req, res) => {
 });
 
 router.post('/updatePassword', async(req, res) => {
-    console.log('Cambiar Password');
+    winston.info('Cambiar Password');
     var emailCheck = req.user.local.email;
     var newPassword = req.body.newPass;
     var valPassword = req.body.valPass;
-    console.log(emailCheck)
-    console.log(newPassword)
-    console.log(valPassword)
+    winston.info(emailCheck)
+    winston.info(newPassword)
+    winston.info(valPassword)
     if(newPassword = valPassword){
-        console.log("paso");
+        //console.log("paso");
         var pass = bcrypt.hashSync(newPassword, bcrypt.genSaltSync(8), null);
 
         
@@ -50,12 +51,16 @@ router.post('/updatePassword', async(req, res) => {
 });
 
 router.post('/delete', async(req, res) => {
-    console.log('Borrar Usuario');    
+    winston.info('Borrar Usuario');    
     var emailCheck = req.user.local.email;
-    console.log(emailCheck)
+    winston.info(emailCheck)
     const userDel = await User.findOneAndDelete({"local.email" : emailCheck});
     
-    if (!userDel) return res.status(404).send('Pokemon no encontrado.');
+    if (!userDel) {
+        winston.error('POST/delete' + 'Usuario no encontrado');
+        return res.status(404).send('Usuario no encontrado');
+    }
+    
     res.render('home', {message: req.flash('loginMessage')}) ;       
 });
 
