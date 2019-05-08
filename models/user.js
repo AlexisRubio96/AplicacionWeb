@@ -63,7 +63,9 @@ const userSchema = new mongoose.Schema({
         email        : String,
         name         : String
     },
-    events: [eventSchema]
+    myEvents: [eventSchema],
+    attendingEvents: [eventSchema],
+    invitedEvents: [eventSchema]
 }, { toJSON: { getters: true } });
 
 const User = mongoose.model('User', userSchema);
@@ -74,7 +76,29 @@ function validateUser(user){
         facebook: Joi.string().trim(),
         twitter: Joi.string().trim(),
         google: Joi.string().trim(),
-        events: Joi.array().items(
+        myEvents: Joi.array().items(
+            Joi.object({
+                name: Joi.string().required().trim(),
+                location: Joi.string().required().trim(),
+                dateStart: Joi.date().required(),
+                dateEnd: Joi.date().required(),
+                description: Joi.date().required(),
+                organizer: Joi.string().required().trim(),
+                sprite: Joi.string().required()
+            })
+        ),
+        attendingEvents: Joi.array().items(
+            Joi.object({
+                name: Joi.string().required().trim(),
+                location: Joi.string().required().trim(),
+                dateStart: Joi.date().required(),
+                dateEnd: Joi.date().required(),
+                description: Joi.date().required(),
+                organizer: Joi.string().required().trim(),
+                sprite: Joi.string().required()
+            })
+        ),
+        invitedEvents: Joi.array().items(
             Joi.object({
                 name: Joi.string().required().trim(),
                 location: Joi.string().required().trim(),
@@ -103,4 +127,4 @@ userSchema.methods.validPassword = function(password) {
 // create the model for users and expose it to our app
 //module.exports = mongoose.model('User', userSchema);
 exports.User = User;
-exports.validate = validateUser;
+exports.validateUser = validateUser;

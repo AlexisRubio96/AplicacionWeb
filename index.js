@@ -9,6 +9,7 @@ const signupRouter = require('./routes/signup');
 const eventRouter = require('./routes/event');
 const userRouter = require('./routes/user');
 
+
 //______Loaded modules_______
 const session = require('express-session');
 const path = require('path');
