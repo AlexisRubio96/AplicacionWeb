@@ -9,6 +9,7 @@ const signupRouter = require('./routes/signup');
 const eventRouter = require('./routes/event');
 const userRouter = require('./routes/user');
 
+
 //______Loaded modules_______
 const session = require('express-session');
 const path = require('path');
@@ -43,13 +44,14 @@ app.set('view engine', 'ejs');
 //Express Login
 app.use(morgan('dev')); 
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 //Routes usages
 app.use(express.json());
-app.use('/', rootRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
+app.use('/event', eventRouter);
+app.use('/', rootRouter);
 
 //DB connection with .env
 mongoose.connect(process.env.DB_CON, { useNewUrlParser: true, useCreateIndex: true })
