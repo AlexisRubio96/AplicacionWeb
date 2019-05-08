@@ -43,7 +43,7 @@ const eventSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
     local            : {
         email        : String,
-        password     : String,
+        password     : String
     },
     facebook         : {
         id           : String,
