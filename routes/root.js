@@ -13,7 +13,7 @@ function isLoggedIn(req, res, next) {
 }
 
 router.get('/', (req, res) => {
-    res.render('profilePrueba') ;       //Aqui va 'home'
+    res.render('createEvent') ;       //Aqui va 'home'
 });
 
 router.get('/logout', (req, res) => {
