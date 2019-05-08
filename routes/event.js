@@ -27,7 +27,10 @@ router.post('/addEvent', async(req, res) => {
 });
 
 router.get('/add', (req, res) => {
-    res.render('createEvent', {message: req.flash('eventCreation')}) ;     
+    res.render('createEvent.ejs', {
+        user : req.user 
+    });
+    //res.render('createEvent', {message: req.flash('eventCreation')}) ;     
 });
 
 router.get('/name', (req, res) => {
@@ -37,10 +40,25 @@ router.get('/name', (req, res) => {
 
 
 
-router.post('/name', (req, res) => {
+router.post('/name', async(req, res) => {
     console.log('Llegue a un evento en especifico');
     console.log(req.body.search);
-    res.render('home', {message: req.flash('loginMessage')}) ;     
+
+    const pageSize = parseInt(req.query.pageSize) || 5;
+    const pageNumber = parseInt(req.query.pageNumber) || 1;
+    const eventNuevo = await Event.findOne({name: req.body.search});
+
+    if(!eventNuevo) return res.status(404).render('error', {error: 404, message: 'No se encontraron eventos.'})
+
+    const events = new Event
+        .find()
+        .sort({dateStart: 1})
+        .limit(pageSize)
+        .skip((pageNumber - 1) * pageSize);
+
+    console.log('Eventos con nombre:' + req.body.search);
+    console.log(events);
+    res.render('eventDetailed', {events, pageNumber, pageSize, eventNuevo}) ;     
 });
 
 

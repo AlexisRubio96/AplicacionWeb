@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const router = express.Router();
+const { User, validateUser } = require('../models/user');
 
 function isLoggedIn(req, res, next) {
 
