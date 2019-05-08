@@ -5,3 +5,19 @@
 2019-05-08T21:42:50.070Z [32minfo[39m: login/GETSe entró a la pantalla de login
 2019-05-08T21:42:57.639Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
 2019-05-08T21:42:57.639Z [32minfo[39m: Accedió a su perfil
+2019-05-08T22:35:41.450Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-08T22:35:42.499Z [32minfo[39m: Conectado a MongoDB...
+2019-05-08T22:36:03.582Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-08T22:36:05.786Z [32minfo[39m: login/GETSe entró a la pantalla de login
+2019-05-08T22:36:08.857Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-08T22:36:08.858Z [32minfo[39m: Accedió a su perfil
+2019-05-08T22:36:13.601Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-08T22:36:13.602Z [32minfo[39m: Se accedió a la página de inicio cuando estaba loggeado
+2019-05-08T22:38:57.158Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-08T22:38:58.220Z [32minfo[39m: Conectado a MongoDB...
+2019-05-08T22:38:59.632Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-08T22:39:01.348Z [32minfo[39m: login/GETSe entró a la pantalla de login
+2019-05-08T22:39:04.011Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-08T22:39:04.012Z [32minfo[39m: Accedió a su perfil
+2019-05-08T22:39:06.639Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-08T22:39:06.642Z [32minfo[39m: Se accedió a la página de inicio cuando estaba loggeado
