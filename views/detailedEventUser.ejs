@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
     <style>
         body        { padding-top:80px; }
-    </style>
+    </style>    
+    <script type="text/javascript">
+        function hide() {
+
+            var div1 = document.getElementById("div1");
+            var div2 = document.getElementById("div2");
+            var div3 = document.getElementById("div3");
+            var div4 = document.getElementById("div4");
+            var div5 = document.getElementById("div5");
+            var div6 = document.getElementById("div6");
+            var div7 = document.getElementById("div7");
+
+            div1.style.display = 'none';
+            div2.style.display = 'none';
+            div3.style.display = 'none';
+            div4.style.display = 'none';
+            div5.style.display = 'none';
+            div6.style.display = 'none';
+            div7.style.display = 'none';
+        }
+
+    </script>
 </head>
-<body>
+
+
+<body onload="hide()">
+<script>hide();</script>
 <div class="container">
 
 <div class="col-sm-6 col-sm-offset-3">
@@ -53,13 +77,72 @@
             <input type="text" class="form-control" name="types" value="<%= event.types%>">
         </div>
 
-        <button type="submit" class="btn btn-success btn-lg">Assist</button>
+        <button type="submit" class="btn btn-success btn-lg">Assist!</button>
+        <br></br>
+    </form>
 
+    <form action="/event/share" method="post">
+
+        <div class="form-group" id = "div1">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" value="<%= event.name%>">
+        </div>
+        <div class="form-group" id = "div2">
+            <label>Location</label>
+            <input type="text" class="form-control" name="location" value="<%= event.location%>">
+        </div>
+        <div class="form-group" id = "div3">
+            <label>Date Start:</label>
+            <input type="date" class="form-control" name="dateStart" value="<%= event.dateStart%>">
+        </div>
+        <div class="form-group" id = "div4">
+            <label>Date End:</label>
+            <input type="date" class="form-control" name="dateEnd" value="<%= event.dateEnd%>">
+        </div>
+        <div class="form-group" id = "div5">
+            <label>Description:</label>
+            <input type="text" class="form-control" name="description" value="<%= event.description%>">
+        </div>
+        <div class="form-group" id = "div6">
+            <label>Organizer:</label>
+            <input type="text" class="form-control" name="organizer" value="<%= event.organizer%>">
+        </div>
+        <div class="form-group" id = "div7">
+            <label>Types</label>
+            <input type="text" class="form-control" name="types" value="<%= event.types%>">
+        </div>
+        <br></br>
+
+        <button type="submit" class="btn btn-success btn-lg">Invite!</button>
+        
     </form>
 
 
+
 </div>
 
 </div>
+
+<script type="text/javascript">
+    function toggle_visibility(id) {
+
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        var div3 = document.getElementById("div3");
+        var div4 = document.getElementById("div4");
+        var div5 = document.getElementById("div5");
+        var div6 = document.getElementById("div6");
+        var div7 = document.getElementById("div7");
+
+        div1.style.display = 'none';
+        div2.style.display = 'none';
+        div3.style.display = 'none';
+        div4.style.display = 'none';
+        div5.style.display = 'none';
+        div6.style.display = 'none';
+        div7.style.display = 'none';
+    }
+
+</script>
 </body>
 </html>
