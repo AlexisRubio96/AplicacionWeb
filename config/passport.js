@@ -19,6 +19,7 @@ module.exports = function(passport) {
     //_________SIGNUP_____________________
     passport.use('local-signup', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
+        //usernameField : 'username',
         usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true // allows us to pass back the entire request to the callback
@@ -34,12 +35,15 @@ module.exports = function(passport) {
             if (user) {
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
             } else {
+                
+                
 
                 var newUser            = new User();
-
+               // newUser.local.username = username;
                 newUser.local.email    = email;
                 newUser.local.password = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);    //Encripta contraseña
 
+                console.log('LALALALALALALALA' + email + password);
                 // save the user
                 newUser.save(function(err) {
                     if (err)

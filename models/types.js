@@ -1,12 +1,12 @@
 module.exports = [
-    "negocios",
-    "caridad",
-    "cultura",
-    "educacion",
-    "entretenimiento",
-    "salud",
-    "musica",
-    "tecnologia",
-    "ciencia",
-    "viajes"
+    "business",
+    "charity",
+    "culture",
+    "education",
+    "entertainment",
+    "health",
+    "music",
+    "technology",
+    "science",
+    "travel"
 ]
