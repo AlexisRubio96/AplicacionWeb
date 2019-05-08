@@ -6,7 +6,19 @@ const express = require('express');
 const router = express.Router();
 
 const nodemailer = require('nodemailer');
-const hbs = require('nodemailer-express-handlebars');
+const exphbs = require('express-handlebars');
+
+const mailer = nodemailer.createTransport({
+    from: 'no-reply@example.com',
+    host: 'smtp.gmail.com', // hostname
+    secureConnection: true, // use SSL
+    port: 465, // port for secure SMTP
+    transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
+    auth: {
+        user: 'gmail.user@gmail.com',
+        pass: 'userpass'
+    }
+});
 
 router.post('/addEvent', async(req, res) => {
     console.log('Add event...');
@@ -54,8 +66,13 @@ router.get('/name', (req, res) => {
 });
 
 router.get('/share', (req, res) => {
-    console.log(req.body);
-    res.render('sendEmail', {message: req.flash('eventDetail')}) ;     
+    console.log('Enviar invitación a este evento:');
+    console.log(req.event);
+    // res.render('sendEmail', {message: req.flash('eventDetail')}) ;  
+    res.render('sendEmail.ejs', {
+        //events : req.events 
+        event : req.event
+    });   
 });
 
 router.post('/send', (req, res) => {
@@ -66,7 +83,36 @@ router.post('/send', (req, res) => {
         <ul>
             <p>  Message: ${req.body.message} </p>
         </ul>
-    `;    
+    `;
+    // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: 'gmail', // default is SMTP. Accepts anything that nodemailer accepts
+    auth: {
+        user: 'netocervantes.spam@gmail.com',
+        pass: 'CucharaA21*'
+    },
+    tls:{
+      rejectUnauthorized:false
+    }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: '"InviteUs!" <netocervantes.spam@gmail.com>', // sender address
+      to: req.body.email, // list of receivers
+      subject: 'InviteUs! Invitation', // Subject line
+      text: 'IT works', // plain text body
+      html: output // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Email has been sent');
+  });    
 });
 
 
