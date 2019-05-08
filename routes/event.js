@@ -10,7 +10,7 @@ router.post('/addEvent', async(req, res) => {
     const {error} = validateEvent(req.body);
     if(error) return res.status(400).render('error', {error: 400, message: error.details[0].message});
 
-    event = new Event({
+    events = new Event({
         name: req.body.name,
         location: req.body.location,
         dateStart: req.body.dateStart,
@@ -20,10 +20,11 @@ router.post('/addEvent', async(req, res) => {
         //sprite: req.body.sprite,
         types: req.body.types
     });
-    await event.save();
+    await events.save();
     console.log('Se guardo en mongo el evento');
     //**********Cambiar por la dirección del detalle del evento. EJS
-    return res.redirect('/detailedEvent');    
+    //return res.redirect('/detailedEvent');
+    res.render('detailedEvent', {events}) ;    
 });
 
 router.get('/add', (req, res) => {
@@ -43,22 +44,10 @@ router.get('/name', (req, res) => {
 router.post('/name', async(req, res) => {
     console.log('Llegue a un evento en especifico');
     console.log(req.body.search);
-
-    const pageSize = parseInt(req.query.pageSize) || 5;
-    const pageNumber = parseInt(req.query.pageNumber) || 1;
-    const eventNuevo = await Event.findOne({name: req.body.search});
-
-    if(!eventNuevo) return res.status(404).render('error', {error: 404, message: 'No se encontraron eventos.'})
-
-    const events = new Event
-        .find()
-        .sort({dateStart: 1})
-        .limit(pageSize)
-        .skip((pageNumber - 1) * pageSize);
-
-    console.log('Eventos con nombre:' + req.body.search);
+    const events = await Event.findOne({ name: req.body.search });
     console.log(events);
-    res.render('eventDetailed', {events, pageNumber, pageSize, eventNuevo}) ;     
+
+    res.render('detailedEvent', {events}) ;     
 });
 
 
