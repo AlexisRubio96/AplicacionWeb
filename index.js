@@ -51,13 +51,9 @@ app.use(express.json());
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/event', eventRouter);
-<<<<<<< HEAD
-app.use('/', rootRouter);
-=======
 app.use('/user', userRouter);
 app.use('/', rootRouter);
 
->>>>>>> 9127d0d471895af0d6750b70a7b6184943217107
 
 //DB connection with .env
 mongoose.connect(process.env.DB_CON, { useNewUrlParser: true, useCreateIndex: true })
