@@ -96,8 +96,11 @@
             <h3><span class="fa fa-user"></span> My Events</h3>
             <table class="w3-table w3-border w3-bordered w3-centered">
                 <% for (let i of user.myEvents){ %>
-                <div>
-                  <strong>Nombre Evento:</strong>: <%= i.name %><br>
+                <div class="container" id = "eventNum">
+                  <div class="jumbotron text-center">
+                      
+                    <strong>Nombre Evento:</strong>: <%= i.name %><br>
+                  </div>
                 </div>
                 <% } %>
             </table>
