@@ -5,6 +5,9 @@ const passport = require('passport');
 const express = require('express');
 const router = express.Router();
 
+const nodemailer = require('nodemailer');
+const hbs = require('nodemailer-express-handlebars');
+
 router.post('/addEvent', async(req, res) => {
     console.log('Add event...');
     const {error} = validateEvent(req.body);
@@ -37,6 +40,22 @@ router.get('/add', (req, res) => {
 router.get('/name', (req, res) => {
     console.log(req.body.name);
     res.render('detailedEvent', {message: req.flash('eventDetail')}) ;     
+});
+
+router.get('/share', (req, res) => {
+    console.log(req.body);
+    res.render('sendEmail', {message: req.flash('eventDetail')}) ;     
+});
+
+router.post('/send', (req, res) => {
+    //console.log(req.body); 
+    const output = `
+        <p> You have a new invitation to an event. </p>
+        <h3> Event details. </h3>
+        <ul>
+            <p>  Message: ${req.body.message} </p>
+        </ul>
+    `;    
 });
 
 
