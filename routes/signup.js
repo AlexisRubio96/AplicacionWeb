@@ -3,6 +3,7 @@ const auth = require('../middleware/auth');
 const passport = require('passport');
 const express = require('express');
 const router = express.Router();
+const winston = require('winston');
 
 router.get('/', (req, res) => {
     res.render('signup', {message: req.flash('signupMessage')}) ;     

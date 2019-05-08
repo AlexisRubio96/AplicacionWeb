@@ -1,0 +1,7 @@
+2019-05-08T21:17:23.840Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-08T21:42:08.599Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-08T21:42:08.625Z [32minfo[39m: Conectado a MongoDB...
+2019-05-08T21:42:32.141Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-08T21:42:50.070Z [32minfo[39m: login/GETSe entró a la pantalla de login
+2019-05-08T21:42:57.639Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-08T21:42:57.639Z [32minfo[39m: Accedió a su perfil

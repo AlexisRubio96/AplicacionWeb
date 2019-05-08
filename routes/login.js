@@ -3,8 +3,10 @@ const auth = require('../middleware/auth');
 const passport = require('passport');
 const express = require('express');
 const router = express.Router();
+const winston = require('winston');
 
 router.get('/', (req, res) => {
+    winston.info('login/GET' + 'Se entró a la pantalla de login');
     res.render('login', {message: req.flash('loginMessage')}) ;     
 });
 

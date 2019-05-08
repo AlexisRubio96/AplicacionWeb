@@ -67,8 +67,8 @@ app.use('/', rootRouter);
 
 //DB connection with .env
 mongoose.connect(process.env.DB_CON, { useNewUrlParser: true, useCreateIndex: true })
-    .then(() => console.log('Conectado a MongoDB...'))
-    .catch(err => console.log('Error...', err.message));
+    .then(() => winston.info('Conectado a MongoDB...'))
+    .catch(err => winston.error('Error...', err.message));
 
 //Server connection with .env
 const port = process.env.PORT || 3000;
