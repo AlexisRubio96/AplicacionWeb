@@ -31,7 +31,7 @@
         <a href="#myEvents" onclick="toggle_visibility('myEvents');" class="list-group-item list-group-item-action bg-light">My Events</a>
         <a href="#beThere" onclick="toggle_visibility('beThere');" class=" list-group-item list-group-item-action bg-light">I´ll be there</a>
         <a href="#myInvitations" onclick="toggle_visibility('myInvitations');" class="list-group-item list-group-item-action bg-light">My Invitations</a>
-        <a href="#createEvent" onclick="toggle_visibility('createEvent');" class="list-group-item list-group-item-action bg-light">Create Event</a>
+        <form method="GET" action="/event/addEvent"><a href="#createEvent" onclick="this.parentNode.submit()"  class="list-group-item list-group-item-action bg-light">Create Event</a></form>
         <a href="#editProfile" onclick="toggle_visibility('editProfile');" class="list-group-item list-group-item-action bg-light">Edit Profile</a>
       </div>
     </div>
