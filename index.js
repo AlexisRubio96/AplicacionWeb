@@ -1,4 +1,6 @@
 require('dotenv').config();
+require('./startup/logging')();
+require('./startup/config')();
 
 //hola
 //como estas
@@ -17,12 +19,18 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
+
+
 //For Login
 const passport = require('passport')
 const flash    = require('connect-flash');
 const morgan       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
+const winston = require('winston');
+
+
+
 
 //Session
 app.use(session({
@@ -46,6 +54,8 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+
+
 //Routes usages
 app.use(express.json());
 app.use('/login', loginRouter);
@@ -62,4 +72,4 @@ mongoose.connect(process.env.DB_CON, { useNewUrlParser: true, useCreateIndex: tr
 
 //Server connection with .env
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Escuchando en el puerto ${ port }`));
+app.listen(port, () => winston.info(`Escuchando en el puerto ${ port }`));
