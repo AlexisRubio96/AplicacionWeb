@@ -42,6 +42,10 @@ module.exports = function(passport) {
                // newUser.local.username = username;
                 newUser.local.email    = email;
                 newUser.local.password = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);    //Encripta contraseña
+                newUser.myEvents = [];
+                newUser.attendingEvents = [];
+                newUser.invitedEvents = [];
+
 
                 console.log('LALALALALALALALA' + email + password);
                 // save the user

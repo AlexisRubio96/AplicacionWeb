@@ -12,8 +12,10 @@ router.post('/addEvent', async(req, res) => {
     console.log('Add event...');
     const {error} = validateEvent(req.body);
     if(error) return res.status(400).render('error', {error: 400, message: error.details[0].message});
+    
+    const emailAdd = req.user.local.email;
 
-    events = new Event({
+    const events = new Event({
         name: req.body.name,
         location: req.body.location,
         dateStart: req.body.dateStart,
@@ -24,10 +26,19 @@ router.post('/addEvent', async(req, res) => {
         types: req.body.types
     });
     await events.save();
-    console.log('Se guardo en mongo el evento');
+    console.log(emailAdd);
+    console.log(events);
+
+    //Asscoicate event with name
+    const userUpdate = await User.updateOne({"local.email" : emailAdd}, { $push: {myEvents: events} });
+    console.log('Se guardo en mongo el evento, Por: ' + req.user.local.email);
+    console.log(req.user);
     //**********Cambiar por la dirección del detalle del evento. EJS
     //return res.redirect('/detailedEvent');
-    res.render('detailedEvent', {events}) ;    
+    res.render('detailedEvent.ejs', {
+        user : req.user,
+        events : events
+    });   
 });
 
 router.get('/add', (req, res) => {
