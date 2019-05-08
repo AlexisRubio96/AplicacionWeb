@@ -3,7 +3,7 @@
   }
   
   body{
-    background:#6df46d;
+    background:#237951;
     color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -83,7 +83,7 @@
   }
   
   .contact form button:hover,.contact form button:focus{
-    background:#6df46d;
+    background:#237951;
     color:#fff;
     outline:0;
     transition: background-color 2s ease-out;
