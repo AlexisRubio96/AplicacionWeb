@@ -2,10 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title class="title" >Invite Us!</title>
-    <!--icon-->
-    <link rel = "shortcut icon" href = "../img/icons/favicon.ico" /> 
+    <title>InviteUs!</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
     <style>
@@ -17,40 +14,49 @@
 
 <div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span>Event details</h1>
+    <h1><span class="fa fa-sign-in"></span>Create Event</h1>
 
     <!-- LOGIN FORM -->
-    <div class="col-sm-6" id="profile" >
-        <div class="well">
-            <h3><span class="fa fa-user"></span> Event</h3>
-            <p>
-                <strong>Name:</strong><fieldset name="eventName" title="<%= event.name %>"> </fieldset><br>
-                <strong>Location</strong>: <%= event.location %><br>
-                <strong>Date Start</strong>: <%= event.dateStart %><br>
-                <strong>Date End</strong>: <%= event.dateEnd %><br>
-                <strong>Description</strong>: <%= event.description %><br>
-                <strong>Organizer</strong>: <%= event.organizer %><br>
-                <strong>Types</strong>: <%= event.types%><br>
-
-            </p>
-
+    <form action="/event/assist" method="post">
+        <!--
+        <div class="form-group">
+            <label>Nombre de usuario</label>
+            <input type="text" class="form-control" name="username">
         </div>
-    </div>
+        -->
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" value="<%= event.name%>">
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" class="form-control" name="location" value="<%= event.location%>">
+        </div>
+        <div class="form-group">
+            <label>Date Start:</label>
+            <input type="date" class="form-control" name="dateStart" value="<%= event.dateStart%>">
+        </div>
+        <div class="form-group">
+            <label>Date End:</label>
+            <input type="date" class="form-control" name="dateEnd" value="<%= event.dateEnd%>">
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <input type="text" class="form-control" name="description" value="<%= event.description%>">
+        </div>
+        <div class="form-group" >
+            <label>Organizer:</label>
+            <input type="text" class="form-control" name="organizer" value="<%= event.organizer%>">
+        </div>
+        <div class="form-group">
+            <label>Types</label>
+            <input type="text" class="form-control" name="types" value="<%= event.types%>">
+        </div>
 
-    <br></br>
-    <form  method="post" action="/event/share" onclick="this.parentNode.submit()" >
-        <button type="submit" class="btn btn-success btn-lg">Invite!</button>
-    </form>
-    
-    <br></br>
-    <form  method="post" action="/event/assist" onclick="this.parentNode.submit()" >
-        <button type="submit" class="btn btn-success btn-lg">Assist!</button>
+        <button type="submit" class="btn btn-success btn-lg">Assist</button>
+
     </form>
 
-    <br></br>
-    <form action="/homeUser" method="get">
-        <button type="submit" class="btn btn-success btn-lg"><%= event.name %></button>
-    </form>
 
 </div>
 

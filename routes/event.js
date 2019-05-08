@@ -129,17 +129,17 @@ router.post('/send', (req, res) => {
   res.render('home', {message: req.flash('eventDetail')}) ;
 });
 
-router.post('/assist', async(req, res) => {
+router.post('/assist', (req, res) => {
     console.log('Llegue a un evento en especifico');
     console.log("user " + req.user);
-    
-    console.log("Event " + req);
+    console.log("Event " + req.event);
 
-    console.log("Element " + req.body.eventName);
+    console.log("Element " + req.body.name);
 
+    /**
     res.render('homeUser.ejs', {
         user : req.user, 
-    });     
+    });  */    
 });
 
 router.post('/name', async(req, res) => {
