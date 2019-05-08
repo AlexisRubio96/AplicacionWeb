@@ -33,9 +33,9 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    sprite:{
+    types:{
         type: String,
-        required: true
+        //required: true
     }
 }, { toJSON: { getters: true }});
 
