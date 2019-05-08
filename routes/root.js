@@ -17,6 +17,12 @@ router.get('/', (req, res) => {
     res.render('home') ;       //Aqui va 'home'
 });
 
+router.get('/homeUser', isLoggedIn, function(req, res) {
+    res.render('homeUser.ejs', {
+        user : req.user 
+    });
+});
+
 router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/') ;       

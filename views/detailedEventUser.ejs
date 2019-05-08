@@ -24,13 +24,13 @@
         <div class="well">
             <h3><span class="fa fa-user"></span> Event</h3>
             <p>
-                <strong>Name</strong>: <%= events.name %><br>
-                <strong>Location</strong>: <%= events.location %><br>
-                <strong>Date Start</strong>: <%= events.dateStart %><br>
-                <strong>Date End</strong>: <%= events.dateEnd %><br>
-                <strong>Description</strong>: <%= events.description %><br>
-                <strong>Organizer</strong>: <%= events.organizer %><br>
-                <strong>Types</strong>: <%= events.types%><br>
+                <strong>Name:</strong><fieldset name="eventName" title="<%= event.name %>"> </fieldset><br>
+                <strong>Location</strong>: <%= event.location %><br>
+                <strong>Date Start</strong>: <%= event.dateStart %><br>
+                <strong>Date End</strong>: <%= event.dateEnd %><br>
+                <strong>Description</strong>: <%= event.description %><br>
+                <strong>Organizer</strong>: <%= event.organizer %><br>
+                <strong>Types</strong>: <%= event.types%><br>
 
             </p>
 
@@ -38,20 +38,18 @@
     </div>
 
     <br></br>
-    <form  method="GET" action="/signup" onclick="this.parentNode.submit()" >
-        <button type="submit" class="btn btn-success btn-lg">Sign Up!</button>
-        <p>To send invitation or to assit this event.</p>
+    <form  method="post" action="/event/share" onclick="this.parentNode.submit()" >
+        <button type="submit" class="btn btn-success btn-lg">Invite!</button>
     </form>
     
     <br></br>
-    <!--
-    <form  method="GET" action="/event/assist" onclick="this.parentNode.submit()" >
+    <form  method="post" action="/event/assist" onclick="this.parentNode.submit()" >
         <button type="submit" class="btn btn-success btn-lg">Assist!</button>
-    </form>-->
+    </form>
 
     <br></br>
-    <form action="/" method="get">
-        <button type="submit" class="btn btn-success btn-lg">Back</button>
+    <form action="/homeUser" method="get">
+        <button type="submit" class="btn btn-success btn-lg"><%= event.name %></button>
     </form>
 
 </div>

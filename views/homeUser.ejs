@@ -1,9 +1,9 @@
-<!-- views/home.ejs -->
+<!-- views/homeUser.ejs -->
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title class="title" >Invite Us!</title>
+    <title class="title" >InviteUs!</title>
     <!--icon-->
     <link rel = "shortcut icon" href = "../img/icons/favicon.ico" /> 
 
@@ -37,27 +37,28 @@
     <!--NavBar-->
 
     <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-success">  
-        <div class="collapse navbar-collapse" id="navbarColor01" id = "noUser">
-            <ul class="navbar-nav ml-xl-5">
-                <li class="nav-item active">
-                    <a class="nav-link" style="font-size: 20px" href="#home">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 20px" href="#events">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" style="font-size: 20px"href="#about">About</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item" >
-                        <a class="nav-link" style="font-size: 20px" class="form-control mr-sm-2" href="/signup">Signup</a>
-                    </li>
-            </ul>
-        </div>
+
+            <div class="collapse navbar-collapse" id="navbarColor01" id = "withUser">
+                    <ul class="navbar-nav ml-xl-5">
+                        <li class="nav-item active">
+                            <a class="nav-link" style="font-size: 20px" href="#home">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 20px" href="#events">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 20px"href="#about">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" style="font-size: 20px" href="/profile"><%= user.local.email %></a>
+                            </li>
+                            <li class="nav-item" >
+                                <a class="nav-link" style="font-size: 20px" class="form-control mr-sm-2" href="/logout">Log Out</a>
+                            </li>
+                    </ul>
+                </div>
         
     </nav>
 
@@ -87,7 +88,7 @@
                     <p></p>  
                 </div>
 
-                <form method= "POST" class="box" action ="/event/name">
+                <form method= "POST" class="box" action ="/event/nameUser">
                     <div class="container-4">
                     <input type="search" id="search" placeholder="Search Event" name="search"/>
                     <button class="icon" ><i class="fa fa-search"></i></button>
@@ -97,7 +98,7 @@
                 <div>
                     <p>Create your event!</p>  
                 </div>
-                <form method= "GET" class="box" action = "/event/addName">
+                <form method="GET" action="/event/add" class="box">
                     <div class="container-4">
                         <input type="event_name" id="event_name" placeholder="Name of event" />
                         <button class="icon" ><i class="fas fa-arrow-right"></i></button>

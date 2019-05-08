@@ -62,12 +62,24 @@ router.get('/add', (req, res) => {
 
 router.get('/name', (req, res) => {
     console.log(req.body.name);
-    res.render('detailedEvent', {message: req.flash('eventDetail')}) ;     
+    res.render('detailedEvent', {message: req.flash('eventDetail')}) ;
 });
 
-router.get('/share', (req, res) => {
+
+//Para cuando se ha inciado sesión
+router.get('/nameUser', (req, res) => {
+    console.log(req.body.name);    
+    res.render('detailedEventUser.ejs', {
+        user : req.user, 
+        event : req.event
+    });  
+});
+
+router.post('/share', (req, res) => {
     console.log('Enviar invitación a este evento:');
+    console.log(req.user);
     console.log(req.event);
+    //console.log(req.body.eventName)
     res.render('sendEmail', {message: req.flash('eventDetail')}) ;  
     // res.render('sendEmail.ejs', {
     //     //events : req.events 
@@ -117,17 +129,35 @@ router.post('/send', (req, res) => {
   res.render('home', {message: req.flash('eventDetail')}) ;
 });
 
+router.post('/assist', async(req, res) => {
+    console.log('Llegue a un evento en especifico');
+    console.log("user " + req.user);
+    
+    console.log("Event " + req);
 
+    console.log("Element " + req.body.eventName);
+
+    res.render('homeUser.ejs', {
+        user : req.user, 
+    });     
+});
 
 router.post('/name', async(req, res) => {
     console.log('Llegue a un evento en especifico');
-    console.log(req.body.search);
+    console.log(req.body.event);
     const events = await Event.findOne({ name: req.body.search });
     console.log(events);
 
     res.render('detailedEvent', {events}) ;     
 });
 
+router.post('/nameUser', async (req, res) => {  
+    const event = await Event.findOne({ name: req.body.search });  
+    res.render('detailedEventUser.ejs', {
+        user : req.user, 
+        event : event
+    });  
+});
 
 
 router.get('/', (req, res) => {
