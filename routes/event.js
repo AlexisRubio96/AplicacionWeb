@@ -116,6 +116,22 @@ router.post('/share', async (req, res) => {
     });
 });
 
+router.post('/sendUser', async(req, res) => {
+    console.log('Llegue a un evento en especifico assist');
+    console.log("user " + req.user);
+    console.log("Event " + req.event);
+
+    console.log("Element " + req.body.email);
+    const nameUser = req.body.email;
+    var nameEvent = req.body.name;
+    const events = await Event.findOne({ name: nameEvent });
+    
+    const userUpdate = await User.updateOne({"local.email" : nameUser}, { $push: {invitedEvents: events} });
+    res.render('homeUser.ejs', {
+        user : req.user, 
+    });    
+});
+
 router.post('/send', (req, res) => {
     //console.log(req.body); 
     
