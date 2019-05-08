@@ -4,7 +4,7 @@
   "description": "Aplicacion para el proyecto de Desarrollo Web",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Ernesto y Jorge",
   "license": "ISC",
