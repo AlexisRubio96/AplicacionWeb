@@ -83,9 +83,7 @@
             <div class="well">
                 <h3><span class="fa fa-user"></span> Profile</h3>
                 <p>
-                    <strong>id</strong>: <%= user._id %><br>
                     <strong>email</strong>: <%= user.local.email %><br>
-                    <strong>password</strong>: <%= user.local.password %><br>
                 </p>
 
             </div>
@@ -112,12 +110,18 @@
 
         <div class="col-sm-6" id="beThere" >
             <div class="well">
-                <h3><span class="fa fa-user"></span> beThere</h3>
-                <p>
-                    <strong>id</strong><br>
-                    <strong>email</strong><br>
-                    <strong>password</strong><br>
-                </p>
+                <h3><span class="fa fa-user"></span>I´ll be there</h3>
+                
+                <table class="w3-table w3-border w3-bordered w3-centered">
+                    <% for (let i of user.attendingEvents){ %>
+                    <div class="container" id = "eventNum">
+                      <div class="jumbotron text-center">
+                          
+                        <strong>Nombre Evento:</strong>: <%= i.name %><br>
+                      </div>
+                    </div>
+                    <% } %>
+                </table>
 
             </div>
 
@@ -125,25 +129,17 @@
 
         <div class="col-sm-6" id="myInvitations" >
             <div class="well">
-                <h3><span class="fa fa-user"></span> myInvitations</h3>
-                <p>
-                    <strong>id</strong><br>
-                    <strong>email</strong><br>
-                    <strong>password</strong><br>
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="col-sm-6" id="createEvent" >
-            <div class="well">
-                <h3><span class="fa fa-user"></span> createEvent</h3>
-                <p>
-                    <strong>id</strong><br>
-                    <strong>email</strong><br>
-                    <strong>password</strong><br>
-                </p>
+                <h3><span class="fa fa-user"></span>My Invitations</h3>
+                <table class="w3-table w3-border w3-bordered w3-centered">
+                    <% for (let i of user.invitedEvents){ %>
+                    <div class="container" id = "eventNum">
+                      <div class="jumbotron text-center">
+                      
+                        <strong>Nombre Evento:</strong>: <%= i.name %><br>
+                      </div>
+                    </div>
+                    <% } %>
+                </table>
 
             </div>
 
@@ -226,14 +222,12 @@ onclick="toggle_visibility('myEvents');
         var showBeThere = document.getElementById('beThere');
         var showMyEv = document.getElementById('myEvents');
         var showInvit = document.getElementById('myInvitations');
-        var showCreateEvent = document.getElementById('createEvent');
         var showEditProf = document.getElementById('editProfile');
         if(id == 'profile'){
         showProfile.style.display = 'block';
         showMyEv.style.display = 'none';
         showBeThere.style.display = 'none';
         showInvit.style.display = 'none';
-        showCreateEvent.style.display = 'none';
         showEditProf.style.display = 'none';
         }
         if(id == 'myEvents'){
@@ -241,7 +235,6 @@ onclick="toggle_visibility('myEvents');
         showMyEv.style.display = 'block';
         showBeThere.style.display = 'none';
         showInvit.style.display = 'none';
-        showCreateEvent.style.display = 'none';
         showEditProf.style.display = 'none';
         }
         if(id == 'beThere'){
@@ -249,7 +242,6 @@ onclick="toggle_visibility('myEvents');
         showMyEv.style.display = 'none';
         showBeThere.style.display = 'block';
         showInvit.style.display = 'none';
-        showCreateEvent.style.display = 'none';
         showEditProf.style.display = 'none';
         }
         if(id == 'myInvitations'){
@@ -257,7 +249,6 @@ onclick="toggle_visibility('myEvents');
         showMyEv.style.display = 'none';
         showBeThere.style.display = 'none';
         showInvit.style.display = 'block';
-        showCreateEvent.style.display = 'none';
         showEditProf.style.display = 'none';
         }
         if(id == 'createEvent'){
@@ -265,7 +256,6 @@ onclick="toggle_visibility('myEvents');
         showMyEv.style.display = 'none';
         showBeThere.style.display = 'none';
         showInvit.style.display = 'none';
-        showCreateEvent.style.display = 'block';
         showEditProf.style.display = 'none';
         }
         if(id == 'editProfile'){
@@ -273,7 +263,6 @@ onclick="toggle_visibility('myEvents');
         showMyEv.style.display = 'none';
         showBeThere.style.display = 'none';
         showInvit.style.display = 'none';
-        showCreateEvent.style.display = 'none';
         showEditProf.style.display = 'block';
         }
     }

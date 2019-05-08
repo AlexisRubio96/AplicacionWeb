@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Invite, invite, invite</title>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="container">
@@ -18,16 +18,40 @@
           
           
           <p>
-            <label>Email Address</label>
+            <label>To a personal email address</label>
             <input type="email" name="email">
           </p>
-          
+          <p>
+              <label>Event name</label>
+              <input type="email" name="eventName">
+          </p>
           <p class="full">
             <label>Message</label>
             <textarea name="message" rows="5"></textarea>
           </p>
           <p class="full">
-            <button type="submit">Send</button>
+            <button type="submit">Send to email</button>
+          </p>
+        </form>
+
+        <br></br>
+
+        <form method="POST" action="/event/sendUser">          
+          
+          <p>
+            <label>To a InviteUs user</label>
+            <input type="email" name="email">
+          </p>          
+          <p>
+              <label>Event name</label>
+              <input type="email" name="email">
+          </p>
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit">Send to user</button>
           </p>
         </form>
       </div>

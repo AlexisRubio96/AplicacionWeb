@@ -47,7 +47,7 @@ router.post('/addEvent', async(req, res) => {
     console.log(req.user);
     //**********Cambiar por la dirección del detalle del evento. EJS
     //return res.redirect('/detailedEvent');
-    res.render('detailedEvent.ejs', {
+    res.render('detailedEventUser.ejs', {
         user : req.user,
         events : events
     });   
@@ -75,20 +75,54 @@ router.get('/nameUser', (req, res) => {
     });  
 });
 
-router.post('/share', (req, res) => {
-    console.log('Enviar invitación a este evento:');
-    console.log(req.user);
-    console.log(req.event);
-    //console.log(req.body.eventName)
-    res.render('sendEmail', {message: req.flash('eventDetail')}) ;  
-    // res.render('sendEmail.ejs', {
-    //     //events : req.events 
-    //     event : req.event
-    // });   
+
+
+
+//Assist
+router.post('/assist', async(req, res) => {
+    console.log('Llegue a un evento en especifico assist');
+    console.log("user " + req.user);
+    console.log("Event " + req.event);
+
+    console.log("Element " + req.body.name);
+    const nameUser = req.user.local.email;
+    var nameEvent = req.body.name;
+    const events = await Event.findOne({ name: nameEvent });
+    
+    const userUpdate = await User.updateOne({"local.email" : nameUser}, { $push: {attendingEvents: events} });
+    res.render('homeUser.ejs', {
+        user : req.user, 
+    });    
+});
+
+//Invite
+router.post('/share', async (req, res) => {
+    console.log('Llegue a un evento en especifico Invite share');
+    console.log("user " + req.user);
+
+    console.log("Element " + req.body.name);
+    const nameUser = req.user.local.email;
+    var nameEvent = req.body.name;
+
+    const events = await Event.findOne({ name: nameEvent });
+
+    res.render('sendEmail.ejs', {
+        user : req.user, 
+        event : events
+    });
 });
 
 router.post('/send', (req, res) => {
     //console.log(req.body); 
+    
+    console.log('Llegue a un evento en especifico Invite send');
+    console.log("user " + req.user);
+    console.log("Event " + req.event);
+    console.log("Element " + req.body.name);
+    
+    const nameUser = req.user.local.email;
+    var nameEvent = req.body.name;
+
     const output = `
         <p> You have a new invitation to an event. </p>
         <h3> Event details. </h3>
@@ -129,18 +163,6 @@ router.post('/send', (req, res) => {
   res.render('home', {message: req.flash('eventDetail')}) ;
 });
 
-router.post('/assist', (req, res) => {
-    console.log('Llegue a un evento en especifico');
-    console.log("user " + req.user);
-    console.log("Event " + req.event);
-
-    console.log("Element " + req.body.name);
-
-    /**
-    res.render('homeUser.ejs', {
-        user : req.user, 
-    });  */    
-});
 
 router.post('/name', async(req, res) => {
     console.log('Llegue a un evento en especifico');
