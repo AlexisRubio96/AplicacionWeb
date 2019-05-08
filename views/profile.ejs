@@ -25,7 +25,7 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading"> <%= user.local.email %></div>
+      <div class="sidebar-heading" id="email" name = "email"> <%= user.local.email %></div>
       <div class="list-group list-group-flush">
         <a href="#profile" onclick="toggle_visibility('profile');" class="list-group-item list-group-item-action bg-light">Profile</a>
 
@@ -141,13 +141,33 @@
 
         <div class="col-sm-6" id="editProfile" >
             <div class="well">
-                <h3><span class="fa fa-user"></span> editProfile</h3>
-                <p>
-                    <strong>id</strong><br>
-                    <strong>email</strong><br>
-                    <strong>password</strong><br>
-                </p>
+                <h3><span class="fa fa-user"></span> Edit Profile</h3>
+                <form action="/user/updateEmail" method="post">
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" class="form-control" name="newEmail">
+                  </div>          
+                  <button type="submit" class="btn btn-success btn-lg">Update email</button>
+                </form>                
+                <br></br>
 
+                <form action="/user/updatePassword" method="post">
+                  <div class="form-group">
+                      <label>New Password</label>
+                      <input type="text" class="form-control" name="newPass">
+                  </div>
+                  <div class="form-group">
+                      <label>Validate Password</label>
+                      <input type="text" class="form-control" name="valPass">
+                  </div>         
+                  <button type="submit" class="btn btn-success btn-lg">Update password</button>
+                </form>
+                <br></br>
+
+                <form action="/user/delete" method="post">
+                  <button type="submit" class="btn btn-success btn-lg">Delete Account</button>
+                  <p>Once you delete it, you would not be able to recover your events!</p>
+                </form>
             </div>
 
         </div>       
@@ -246,6 +266,10 @@ onclick="toggle_visibility('myEvents');
         showCreateEvent.style.display = 'none';
         showEditProf.style.display = 'block';
         }
+    }
+
+    function toggle_update(id){
+
     }
 </script>
 
