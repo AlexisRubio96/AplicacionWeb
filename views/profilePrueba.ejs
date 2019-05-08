@@ -91,11 +91,15 @@
         <div class="col-sm-6" id="myEvents" >
             <div class="well">
                 <h3><span class="fa fa-user"></span> myEvents</h3>
-                <p>
-                    <strong>id</strong><br>
-                    <strong>email</strong><br>
-                    <strong>password</strong><br>
-                </p>
+                <div class="w3-container w3-blue"><h1 class="w3-jumbo w3-padding-small">Pokédex</h1></div>
+                    <table class="w3-table w3-border w3-bordered w3-centered">
+                        <% for (let i of user.myEvents){ %>
+                        <div>
+                          <strong>Nombre Evento:</strong>: <%= i.name %><br>
+                        </div>
+                        <% } %>
+                    </table>
+                </div>
 
             </div>
         </div>
