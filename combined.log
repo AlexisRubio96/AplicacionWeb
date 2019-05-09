@@ -234,3 +234,156 @@
   attendingEvents: [],
   invitedEvents: [],
   __v: 0 }
+2019-05-09T00:23:52.987Z [32minfo[39m: Add event...
+2019-05-09T00:23:52.994Z [32minfo[39m: jarss96@hotmail.com
+2019-05-09T00:23:52.995Z [32minfo[39m: { _id: 5cd373185ca1e4587041fa59,
+  name: 'preuba3',
+  location: 'Prueba4',
+  dateStart: 2019-05-09T00:00:00.000Z,
+  dateEnd: 2019-05-09T00:00:00.000Z,
+  description: 'Preuba',
+  organizer: 'jarss96@hotmail.com',
+  types: 'Preuba',
+  __v: 0 }
+2019-05-09T00:23:53.005Z [32minfo[39m: Se guardo en mongo el evento, Por: jarss96@hotmail.com
+2019-05-09T00:23:53.006Z [32minfo[39m: { local:
+   { email: 'jarss96@hotmail.com',
+     password:
+      '$2b$08$KIZUCH6LhJiklYRUUPMmHu0QbbXS693dyoTzJVdluDicwGw19Dai.' },
+  _id: 5cd37085fc548d463cc5265a,
+  myEvents:
+   [ { _id: 5cd37111fc548d463cc5265b,
+       name: 'evento jorge',
+       location: 'Casa Jorge',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-16T00:00:00.000Z,
+       description: 'Cqarnita asada',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Fiesta' },
+     { _id: 5cd37185fc548d463cc5265d,
+       name: 'preuba',
+       location: 'Prueba',
+       dateStart: 2019-05-07T00:00:00.000Z,
+       dateEnd: 2019-05-01T00:00:00.000Z,
+       description: 'Prueba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'prueba' },
+     { _id: 5cd37219908e5d397c0c4130,
+       name: 'prueba2',
+       location: 'Prueba2',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-15T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' },
+     { _id: 5cd372965ca1e4587041fa57,
+       name: 'preuba3',
+       location: 'Prueba4',
+       dateStart: 2019-05-09T00:00:00.000Z,
+       dateEnd: 2019-05-09T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' } ],
+  attendingEvents: [],
+  invitedEvents: [],
+  __v: 0 }
+2019-05-09T00:23:59.882Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-09T00:24:11.092Z [32minfo[39m: POST/nameLlegue a un evento en especifico
+2019-05-09T00:24:11.107Z [32minfo[39m: POST/nameundefined
+2019-05-09T00:24:45.587Z [32minfo[39m: POST/nameLlegue a un evento en especifico
+2019-05-09T00:24:45.589Z [32minfo[39m: POST/nameundefined
+2019-05-09T00:27:39.975Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-09T00:27:41.045Z [32minfo[39m: Conectado a MongoDB...
+2019-05-09T00:27:59.328Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-09T00:28:03.087Z [32minfo[39m: POST/nameLlegue a un evento en especifico
+2019-05-09T00:28:03.087Z [32minfo[39m: POST/nameundefined
+2019-05-09T00:28:03.136Z [32minfo[39m: POST/name{ _id: 5cd37111fc548d463cc5265b,
+  name: 'evento jorge',
+  location: 'Casa Jorge',
+  dateStart: 2019-05-15T00:00:00.000Z,
+  dateEnd: 2019-05-16T00:00:00.000Z,
+  description: 'Cqarnita asada',
+  organizer: 'jarss96@hotmail.com',
+  types: 'Fiesta',
+  __v: 0 }
+2019-05-09T00:28:45.591Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-09T00:28:46.658Z [32minfo[39m: Conectado a MongoDB...
+2019-05-09T00:28:51.647Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-09T00:28:55.825Z [32minfo[39m: POST/nameLlegue a un evento en especifico
+2019-05-09T00:28:55.826Z [32minfo[39m: POST/nameundefined
+2019-05-09T00:28:55.859Z [32minfo[39m: POST/name{ _id: 5cd37111fc548d463cc5265b,
+  name: 'evento jorge',
+  location: 'Casa Jorge',
+  dateStart: 2019-05-15T00:00:00.000Z,
+  dateEnd: 2019-05-16T00:00:00.000Z,
+  description: 'Cqarnita asada',
+  organizer: 'jarss96@hotmail.com',
+  types: 'Fiesta',
+  __v: 0 }
+2019-05-09T00:29:02.082Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-09T00:29:14.772Z [32minfo[39m: login/GETSe entró a la pantalla de login
+2019-05-09T00:29:19.933Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:29:19.934Z [32minfo[39m: Accedió a su perfil
+2019-05-09T00:29:44.627Z [32minfo[39m: Add event...
+2019-05-09T00:29:44.654Z [32minfo[39m: jarss96@hotmail.com
+2019-05-09T00:29:44.657Z [32minfo[39m: { _id: 5cd37478cb219e3e5c4ae011,
+  name: 'pr',
+  location: 'pr',
+  dateStart: 2019-05-15T00:00:00.000Z,
+  dateEnd: 2019-05-09T00:00:00.000Z,
+  description: 'pr',
+  organizer: 'jarss96@hotmail.com',
+  types: 'pr',
+  __v: 0 }
+2019-05-09T00:29:44.669Z [32minfo[39m: Se guardo en mongo el evento, Por: jarss96@hotmail.com
+2019-05-09T00:29:44.670Z [32minfo[39m: { local:
+   { email: 'jarss96@hotmail.com',
+     password:
+      '$2b$08$KIZUCH6LhJiklYRUUPMmHu0QbbXS693dyoTzJVdluDicwGw19Dai.' },
+  _id: 5cd37085fc548d463cc5265a,
+  myEvents:
+   [ { _id: 5cd37111fc548d463cc5265b,
+       name: 'evento jorge',
+       location: 'Casa Jorge',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-16T00:00:00.000Z,
+       description: 'Cqarnita asada',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Fiesta' },
+     { _id: 5cd37185fc548d463cc5265d,
+       name: 'preuba',
+       location: 'Prueba',
+       dateStart: 2019-05-07T00:00:00.000Z,
+       dateEnd: 2019-05-01T00:00:00.000Z,
+       description: 'Prueba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'prueba' },
+     { _id: 5cd37219908e5d397c0c4130,
+       name: 'prueba2',
+       location: 'Prueba2',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-15T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' },
+     { _id: 5cd372965ca1e4587041fa57,
+       name: 'preuba3',
+       location: 'Prueba4',
+       dateStart: 2019-05-09T00:00:00.000Z,
+       dateEnd: 2019-05-09T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' },
+     { _id: 5cd373185ca1e4587041fa59,
+       name: 'preuba3',
+       location: 'Prueba4',
+       dateStart: 2019-05-09T00:00:00.000Z,
+       dateEnd: 2019-05-09T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' } ],
+  attendingEvents: [],
+  invitedEvents: [],
+  __v: 0 }
+2019-05-09T00:29:58.929Z [32minfo[39m: Message sent: %s
+2019-05-09T00:29:58.931Z [32minfo[39m: Email has been sent

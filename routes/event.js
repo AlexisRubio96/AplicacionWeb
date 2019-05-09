@@ -203,9 +203,9 @@ router.post('/name', async(req, res) => {
     winston.info('POST/name' + 'Llegue a un evento en especifico');
     winston.info('POST/name' + req.body.event);
     const event = await Event.findOne({ name: req.body.search });
-    winston.info('POST/name' + events);
+    winston.info('POST/name' + event);
 
-    res.render('detailedEvent', {events}) ;     
+    res.render('detailedEvent', {event}) ;     
 });
 
 router.post('/nameUser', async (req, res) => {  
