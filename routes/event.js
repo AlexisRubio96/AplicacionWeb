@@ -53,7 +53,7 @@ router.post('/addEvent', async(req, res) => {
     //return res.redirect('/detailedEvent');
     res.render('detailedEventUser.ejs', {
         user : req.user,
-        events : events
+        event : events
     });   
 });
 
@@ -75,7 +75,7 @@ router.get('/nameUser', (req, res) => {
     winston.info('GET/nameUser' + req.body.name);    
     res.render('detailedEventUser.ejs', {
         user : req.user, 
-        event : req.event
+        event : events
     });  
 });
 
@@ -200,7 +200,7 @@ router.post('/assist', (req, res) => {
 router.post('/name', async(req, res) => {
     winston.info('POST/name' + 'Llegue a un evento en especifico');
     winston.info('POST/name' + req.body.event);
-    const events = await Event.findOne({ name: req.body.search });
+    const event = await Event.findOne({ name: req.body.search });
     winston.info('POST/name' + events);
 
     res.render('detailedEvent', {events}) ;     
