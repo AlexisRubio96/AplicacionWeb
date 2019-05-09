@@ -203,13 +203,21 @@ router.post('/name', async(req, res) => {
     winston.info('POST/name' + 'Llegue a un evento en especifico');
     winston.info('POST/name' + req.body.event);
     const event = await Event.findOne({ name: req.body.search });
+    if(event==null){
+        res.render('home', {event})
+    }
     winston.info('POST/name' + event);
 
     res.render('detailedEvent', {event}) ;     
 });
 
 router.post('/nameUser', async (req, res) => {  
-    const event = await Event.findOne({ name: req.body.search });  
+    const event = await Event.findOne({ name: req.body.search }); 
+    if(event==null){
+        res.render('homeUser.ejs', {
+            user : req.user, 
+        }); 
+    } 
     res.render('detailedEventUser.ejs', {
         user : req.user, 
         event : event

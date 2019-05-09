@@ -387,3 +387,105 @@
   __v: 0 }
 2019-05-09T00:29:58.929Z [32minfo[39m: Message sent: %s
 2019-05-09T00:29:58.931Z [32minfo[39m: Email has been sent
+2019-05-09T00:33:17.755Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-09T00:33:18.791Z [32minfo[39m: Conectado a MongoDB...
+2019-05-09T00:33:58.525Z [32minfo[39m: login/GETSe entró a la pantalla de login
+2019-05-09T00:34:10.970Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:34:10.971Z [32minfo[39m: Accedió a su perfil
+2019-05-09T00:34:40.128Z [32minfo[39m: Add event...
+2019-05-09T00:34:40.163Z [32minfo[39m: jarss96@hotmail.com
+2019-05-09T00:34:40.164Z [32minfo[39m: { _id: 5cd375a0e8442a50b87f83ca,
+  name: 'pureba4',
+  location: 'Prueba5',
+  dateStart: 2019-05-09T00:00:00.000Z,
+  dateEnd: 2019-05-09T00:00:00.000Z,
+  description: 'Preuba',
+  organizer: 'jarss96@hotmail.com',
+  types: 'Fiesta',
+  __v: 0 }
+2019-05-09T00:34:40.179Z [32minfo[39m: Se guardo en mongo el evento, Por: jarss96@hotmail.com
+2019-05-09T00:34:40.179Z [32minfo[39m: { local:
+   { email: 'jarss96@hotmail.com',
+     password:
+      '$2b$08$KIZUCH6LhJiklYRUUPMmHu0QbbXS693dyoTzJVdluDicwGw19Dai.' },
+  _id: 5cd37085fc548d463cc5265a,
+  myEvents:
+   [ { _id: 5cd37111fc548d463cc5265b,
+       name: 'evento jorge',
+       location: 'Casa Jorge',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-16T00:00:00.000Z,
+       description: 'Cqarnita asada',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Fiesta' },
+     { _id: 5cd37185fc548d463cc5265d,
+       name: 'preuba',
+       location: 'Prueba',
+       dateStart: 2019-05-07T00:00:00.000Z,
+       dateEnd: 2019-05-01T00:00:00.000Z,
+       description: 'Prueba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'prueba' },
+     { _id: 5cd37219908e5d397c0c4130,
+       name: 'prueba2',
+       location: 'Prueba2',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-15T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' },
+     { _id: 5cd372965ca1e4587041fa57,
+       name: 'preuba3',
+       location: 'Prueba4',
+       dateStart: 2019-05-09T00:00:00.000Z,
+       dateEnd: 2019-05-09T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' },
+     { _id: 5cd373185ca1e4587041fa59,
+       name: 'preuba3',
+       location: 'Prueba4',
+       dateStart: 2019-05-09T00:00:00.000Z,
+       dateEnd: 2019-05-09T00:00:00.000Z,
+       description: 'Preuba',
+       organizer: 'jarss96@hotmail.com',
+       types: 'Preuba' },
+     { _id: 5cd37478cb219e3e5c4ae011,
+       name: 'pr',
+       location: 'pr',
+       dateStart: 2019-05-15T00:00:00.000Z,
+       dateEnd: 2019-05-09T00:00:00.000Z,
+       description: 'pr',
+       organizer: 'jarss96@hotmail.com',
+       types: 'pr' } ],
+  attendingEvents: [],
+  invitedEvents: [],
+  __v: 0 }
+2019-05-09T00:35:02.037Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:35:02.038Z [32minfo[39m: Accedió a su perfil
+2019-05-09T00:39:32.476Z [32minfo[39m: Salió de sesión
+2019-05-09T00:39:32.488Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-09T00:44:19.176Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-09T00:44:20.233Z [32minfo[39m: Conectado a MongoDB...
+2019-05-09T00:44:25.698Z [32minfo[39m: Se accedió a la página de inicio
+2019-05-09T00:44:31.107Z [32minfo[39m: POST/nameLlegue a un evento en especifico
+2019-05-09T00:44:31.108Z [32minfo[39m: POST/nameundefined
+2019-05-09T00:44:31.159Z [32minfo[39m: POST/namenull
+2019-05-09T00:44:37.285Z [32minfo[39m: POST/nameLlegue a un evento en especifico
+2019-05-09T00:44:37.286Z [32minfo[39m: POST/nameundefined
+2019-05-09T00:44:37.298Z [32minfo[39m: POST/namenull
+2019-05-09T00:45:44.500Z [32minfo[39m: Escuchando en el puerto 3000
+2019-05-09T00:45:45.538Z [32minfo[39m: Conectado a MongoDB...
+2019-05-09T00:45:53.420Z [32minfo[39m: login/GETSe entró a la pantalla de login
+2019-05-09T00:46:02.275Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:46:02.276Z [32minfo[39m: Accedió a su perfil
+2019-05-09T00:46:06.711Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:46:06.711Z [32minfo[39m: Se accedió a la página de inicio cuando estaba loggeado
+2019-05-09T00:46:26.016Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:46:26.018Z [32minfo[39m: Accedió a su perfil
+2019-05-09T00:46:45.326Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:46:45.327Z [32minfo[39m: Se accedió a la página de inicio cuando estaba loggeado
+2019-05-09T00:47:02.718Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:47:02.720Z [32minfo[39m: Se accedió a la página de inicio cuando estaba loggeado
+2019-05-09T00:47:05.641Z [32minfo[39m: isLoggedInEl usuario se autentificó de manera correcta
+2019-05-09T00:47:05.642Z [32minfo[39m: Accedió a su perfil
