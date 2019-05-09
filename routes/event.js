@@ -181,7 +181,9 @@ router.post('/send', (req, res) => {
       winston.info('Email has been sent');
   });  
   
-  res.render('home', {message: req.flash('eventDetail')}) ;
+  res.render('homeUser.ejs', {
+    user : req.user, 
+});  
 });
 
 router.post('/assist', (req, res) => {
