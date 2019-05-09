@@ -18,14 +18,22 @@ router.post('/updateEmail', async(req, res) => {
     var newEmail = req.body.newEmail;
     winston.info(emailCheck)
     winston.info(newEmail)
-    //console.log("paso");
 
+    const user = await User.findOne({"local.email" : newEmail});
+    
+    if (!user) {
+        const userUpdate = await User.updateOne({"local.email" : emailCheck}, {"local.email": newEmail});
+        res.render('profile.ejs', {
+            user : req.user 
+        }); 
+    }else{
+        winston.error('POST/updateEmail' + 'Email is alredy taken');
+        return res.status(404).send('Email is alredy taken');
+    }
+    //console.log("paso");
     //const userUpdate = await User.findOne({"local.email": emailCheck});
-    const userUpdate = await User.updateOne({"local.email" : emailCheck}, {"local.email": newEmail});
     //console.log(userUpdate.local.email);
-    res.render('profile.ejs', {
-        user : req.user 
-    });   
+      
 });
 
 router.post('/updatePassword', async(req, res) => {
